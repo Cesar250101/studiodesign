@@ -8,7 +8,9 @@
         <field name="arch" type="xml">
 
             <xpath expr="//field[@name='origin']" position="after">
-                <field name="project_id"/>
+                <field name="project_id" attrs="{'invisible': [('picking_type_id', '!=', 20)], 'required': [('picking_type_id', '=', 20)]}"/>
+                <field name="user_id" attrs="{'invisible': [('picking_type_id', '!=', 20)], 'required': [('picking_type_id', '=', 20)]}"/>
+                <field name="partner_id" value="1" attrs="{'invisible': [('picking_type_code', '=', 'internal')]}"/>
             </xpath>
 
         </field>
