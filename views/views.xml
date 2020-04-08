@@ -7,11 +7,11 @@
         <field name="inherit_id" ref="stock.vpicktree"/>
         <field name="arch" type="xml">
             <xpath expr="//field[@name='partner_id']" position="attributes">
-                 <attribute name="attrs">{'invisible': [('picking_type_id', '=', 'Solicitud Materiales')]}</attribute>
+                 <attribute name="attrs">{'invisible': [('picking_type_id', '=', 'Studio Design: Solicitud Materiales')]}</attribute>
             </xpath>
             <xpath expr="//field[@name='partner_id']" position="after">
-                <field name="project_id" attrs="{'invisible': [('picking_type_id', '!=', 'Solicitud Materiales')], 'required': [('picking_type_id', '=', 7)]}"/>
-                <field name="user_id" attrs="{'invisible': [('picking_type_id', '!=', 'Solicitud Materiales')], 'required': [('picking_type_id', '=', 7)]}"/>
+                <field name="project_id" attrs="{'invisible': [('picking_type_id', '!=', 'Studio Design: Solicitud Materiales')], 'required': [('picking_type_id', '=', 7)]}"/>
+                <field name="user_id" attrs="{'invisible': [('picking_type_id', '!=', 'Studio Design: Solicitud Materiales')], 'required': [('picking_type_id', '=', 7)]}"/>
             </xpath>
 
         </field>
