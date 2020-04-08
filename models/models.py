@@ -21,6 +21,6 @@ class NewModule(models.Model):
 class Stock(models.Model):
     _inherit = 'stock.picking'
 
-    project_id = fields.Many2one(comodel_name="project.project", string="Proyecto", required=False, )
+    anali = fields.Many2one(comodel_name="project.project", string="Proyecto", required=False, )
     user_id = fields.Many2one(comodel_name="res.users", string="Solicitante", required=False, )
 
