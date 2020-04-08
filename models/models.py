@@ -24,3 +24,7 @@ class Stock(models.Model):
     project_id = fields.Many2one(comodel_name="project.project", string="Proyecto", required=False, )
     user_id = fields.Many2one(comodel_name="res.users", string="Solicitante", required=False, )
 
+    @api.onchange('project_id')
+    def _onchange_project_id(self):
+        for i in self.move_lines:
+            self.move_lines.analityc_account_id=self.project_id
