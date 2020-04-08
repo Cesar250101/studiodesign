@@ -27,4 +27,4 @@ class Stock(models.Model):
     @api.onchange('project_id')
     def _onchange_project_id(self):
         for i in self.move_lines:
-            self.move_lines.analityc_account_id=self.project_id
+            i.analityc_account_id=self.project_id
