@@ -21,7 +21,7 @@ class NewModule(models.Model):
 class Stock(models.Model):
     _inherit = 'stock.picking'
 
-    analytic_account_id = fields.Many2one(string='Analytic Account',comodel_name='account.analytic.account',)
+    analytic_account_id = fields.Many2one(string='Proyecto',comodel_name='account.analytic.account',)
     user_id = fields.Many2one(comodel_name="res.users", string="Solicitante", required=False, )
 
     @api.onchange('project_id')
