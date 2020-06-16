@@ -10,8 +10,8 @@ class ProyectoMateriales(models.Model):
     name = fields.Char(string="Nombre", required=False, )
     product_id = fields.Many2one(comodel_name="product.template", string="Producto", required=False, )
     product_qty = fields.Float(string="Cantidad",  required=False, )
-
     project_id = fields.Many2one(comodel_name="project.project", string="Projecto", required=False, )
+    standard_price=fields.Float(string='Costo',related="product_id.standard_price")
 
 class NewModule(models.Model):
     _inherit = 'project.project'
