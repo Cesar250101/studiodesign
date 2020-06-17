@@ -15,7 +15,7 @@ class ProyectoMateriales(models.Model):
     sub_total = fields.Float(string='Subtotal', compute="_subtotalcosto")
 
     @api.one
-    @api.depends('standard_price',product_qty)
+    @api.depends('standard_price','product_qty')
     def _subtotalcosto(self):
         self.sub_total=self.product_qty*self.standard_price
 
