@@ -12,6 +12,12 @@ class ProyectoMateriales(models.Model):
     product_qty = fields.Float(string="Cantidad",  required=False, )
     project_id = fields.Many2one(comodel_name="project.project", string="Projecto", required=False, )
     standard_price=fields.Float(string='Costo',related="product_id.standard_price")
+    sub_total = fields.Float(string='Subtotal', compute="_subtotalcosto")
+
+    @api.one
+    @api.depends('standard_price',product_qty)
+    def _subtotalcosto(self):
+        self.sub_total=self.product_qty*self.standard_price
 
 class NewModule(models.Model):
     _inherit = 'project.project'
