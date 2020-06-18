@@ -20,7 +20,8 @@ class ProyectoMateriales(models.Model):
         self.sub_total=self.product_qty*self.standard_price
 
 class NewModule(models.Model):
-    _inherit = 'project.project'
+    _name='studiodesign.project'
+    _inherit = ['project.project','mail.thread', 'mail.activity.mixin']
 
     lines_ids = fields.One2many(comodel_name="studiodesign.project.materiales", inverse_name="project_id", string="Lineas", required=False, )
 
