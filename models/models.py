@@ -21,7 +21,7 @@ class ProyectoMateriales(models.Model):
 
 class NewModule(models.Model):
     _name='studiodesign.project'
-    _inherit = ['project.project','mail.thread', 'mail.activity.mixin']
+    _inherit = ['project.project','mail.thread']
 
     lines_ids = fields.One2many(comodel_name="studiodesign.project.materiales", inverse_name="project_id", string="Lineas", required=False, )
 
