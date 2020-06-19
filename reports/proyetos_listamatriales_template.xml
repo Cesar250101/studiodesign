@@ -8,6 +8,9 @@
                 <t t-call="web.html_container">
                     <t t-foreach="docs" t-as="o">
                         <div class="page">
+                            <br></br>
+                            <br></br>
+                            <br></br>
                             <h1 align="center"><u>Lista de Materiales</u></h1>
                             <h2 align="center"><u><span t-field="o.name" /></u></h2>
                                 <br></br>
@@ -21,9 +24,9 @@
                                       </tr>
                                          <tr t-foreach="o.lines_ids" t-as="l">
                                              <td><span t-field="l.product_id"/></td>
-                                             <td><span t-field="l.product_qty"/></td>
-                                             <td><span t-field="l.standard_price"/></td>
-                                             <td><span t-field="l.sub_total"/></td>
+                                             <td align="right"><span t-field="l.product_qty"/></td>
+                                             <td align="right"><span t-field="l.standard_price"/></td>
+                                             <td align="right"><span t-field="l.sub_total"/></td>
                                          </tr>
                                     </table>
                                 <br></br>
@@ -34,12 +37,12 @@
                                 <div class="row">
                                     <table class="table-responsive">
                                           <tr>
-                                            <td><h3>Firma Empleador</h3></td>
-                                            <td><h3>Firma Empleador</h3></td>
+                                            <td><span>Firma Empleador</span></td>
+                                            <td><span>Firma Empleador</span></td>
                                           </tr>
                                           <tr>
-                                            <td><h3>Rut : </h3></td>
-                                            <td><h3>Rut :</h3></td>
+                                            <td><span>Rut : </span></td>
+                                            <td><span>Rut :</span></td>
                                           </tr>
                                     </table>
                                 </div>
