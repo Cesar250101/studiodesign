@@ -23,6 +23,7 @@ class NewModule(models.Model):
     _inherit = 'project.project'
 
     lines_ids = fields.One2many(comodel_name="studiodesign.project.materiales", inverse_name="project_id", string="Lineas", required=False, )
+    etapa_id = fields.Many2one(comodel_name="project.task.type", string="Etapa", required=False, )
 
 class Stock(models.Model):
     _inherit = 'stock.picking'
